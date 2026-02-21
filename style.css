@@ -260,4 +260,76 @@ body {
 
 .file-input {
     display: none;
+
+}
+
+
+/* --- Media Queries for Mobile Responsiveness --- */
+
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto; /* मोबाइल पर स्क्रॉल करने की अनुमति दें */
+        padding: 20px 0;
+        height: auto;
+    }
+
+    .player-container {
+        grid-template-columns: 1fr; /* दो कॉलम को एक में बदलें */
+        height: auto;
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column; /* एलिमेंट्स को ऊपर-नीचे सेट करें */
+    }
+
+    .player-content {
+        padding: 25px;
+        order: 1; /* प्लेयर कंट्रोल्स ऊपर रहेंगे */
+    }
+
+    .playlist-section {
+        padding: 20px;
+        height: 400px; /* प्लेलिस्ट की हाइट फिक्स करें ताकि स्क्रॉल हो सके */
+        order: 2; /* प्लेलिस्ट नीचे आएगी */
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .album-art {
+        width: 150px;
+        height: 150px;
+        font-size: 60px;
+    }
+
+    .song-name {
+        font-size: 1.2rem;
+    }
+
+    .button-group {
+        gap: 20px;
+    }
+
+    .play-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    /* बैकग्राउंड सर्कल्स को मोबाइल पर छोटा करें या छुपा दें */
+    .circle:nth-child(1) { width: 150px; height: 150px; }
+    .circle:nth-child(2) { width: 120px; height: 120px; }
+}
+
+@media (max-width: 480px) {
+    .player-container {
+        width: 95%;
+        border-radius: 20px;
+    }
+    
+    .player-content {
+        padding: 15px;
+    }
+
+    .playlist-section {
+        height: 350px;
+    }
 }
